@@ -9,7 +9,7 @@ import br.com.projetoSeuBarriga.utils.WebDriverUtil;
 
 public class ContasTests {
 
-    public static WebDriver driver = WebDriverUtil.openBrowser();
+    WebDriver driver = WebDriverUtil.openBrowser();
     ContasPage contasPage = new ContasPage(driver);
     LoginPage loginPage = new LoginPage(driver);
 
@@ -26,41 +26,41 @@ public class ContasTests {
 
     @Test
     public void testeAdicionarContaSemSucesso(){
-        this.loginPage.fazerLogin();
         this.contasPage.adicionarConta();
         this.contasPage.clicarBotaoSalvarConta();
-        this.contasPage.validarContaCriadaSemSucesso();
+
+        Assert.assertEquals("Informe o nome da conta", this.contasPage.validarContaCriadaSemSucesso());
     }
 
     @Test
     public void testeAdicionarContaComSucesso(){
-        this.loginPage.fazerLogin();
         this.contasPage.adicionarConta();
         this.contasPage.setNomeConta();
         this.contasPage.clicarBotaoSalvarConta();
-        this.contasPage.validarContaCriadaComSucesso();
+
+        Assert.assertEquals("Conta adicionada com sucesso!", this.contasPage.validarContaCriadaComSucesso());
     }
 
     @Test
     public void testeListarAsContas(){
-        this.loginPage.fazerLogin();
         this.contasPage.listarContas();
-        this.contasPage.validarListaDeContas();
+
+        Assert.assertEquals("Conta", contasPage.validarLabelContaListaDeContas());
+        Assert.assertEquals("Ações", contasPage.validarLabelAcoesListaDeContas());
     }
 
     @Test
     public void testeAlterarConta(){
-        this.loginPage.fazerLogin();
         this.contasPage.editarConta();
+
+        Assert.assertEquals("Conta alterada com sucesso!", this.contasPage.validarMensagemContaAlteradaComSucesso());
     }
 
     @Test
     public void testeExcluirConta(){
-        this.loginPage.fazerLogin();
         this.contasPage.excluirConta();
+
+        Assert.assertEquals("Conta removida com sucesso!", this.contasPage.validarMensagemContaRemovidaComSucesso());
     }
-
-
-
 
 }

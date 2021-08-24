@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class WebDriverUtil {
     public static WebDriver openBrowser() {
         final WebDriver driver;
-        String url = "https://seubarriga.wcaquino.me/login";
+        String url = "https://seubarriga.wcaquino.me";
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(6000, TimeUnit.MILLISECONDS);

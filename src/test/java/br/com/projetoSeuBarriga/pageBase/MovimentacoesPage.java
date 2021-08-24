@@ -48,39 +48,32 @@ public class MovimentacoesPage extends BasePage {
         pageObjects.getBotaoSalvarMovimentacao().click();
     }
 
-    public void validarMensagemDeMovimentacaoComSucesso(){
-        Assert.assertEquals("Movimentação adicionada com sucesso!",
-                pageObjects.getAlertaSucessoMovimentacoes().getText());
+    public String validarMensagemDeMovimentacaoComSucesso(){
+                return pageObjects.getAlertaSucessoMovimentacoes().getText();
     }
 
-    public void validarMensagemCampoValorCaracterInvalido(){
-        Assert.assertEquals("Valor deve ser um número",
-                pageObjects.getAlertaProblemaMovimentacoes().getText());
+    public String validarMensagemCampoValorCaracterInvalido(){
+                return pageObjects.getAlertaProblemaMovimentacoes().getText();
     }
 
-    public void validarMensagemCampoObrigatorioDataDaMovimentacao(){
-        Assert.assertEquals("Data da Movimentação é obrigatório",
-                pageObjects.getAlertaProblemaMovimentacoes().getText());
+    public String validarMensagemCampoObrigatorioDataDaMovimentacao(){
+                return pageObjects.getAlertaProblemaMovimentacoes().getText();
     }
 
-    public void validarMensagemCampoObrigatorioDataDoPagamento(){
-        Assert.assertEquals("Data do pagamento é obrigatório",
-                pageObjects.getAlertaProblemaMovimentacoes().getText());
+    public String validarMensagemCampoObrigatorioDataDoPagamento(){
+        return pageObjects.getAlertaProblemaMovimentacoes().getText();
     }
 
-    public void validarMensagemCampoObrigatorioDescricao(){
-        Assert.assertEquals("Descrição é obrigatório",
-                pageObjects.getAlertaProblemaMovimentacoes().getText());
+    public String validarMensagemCampoObrigatorioDescricao(){
+        return pageObjects.getAlertaProblemaMovimentacoes().getText();
     }
 
-    public void validarMensagemCampoObrigatorioInteressado(){
-        Assert.assertEquals("Interessado é obrigatório",
-                pageObjects.getAlertaProblemaMovimentacoes().getText());
+    public String validarMensagemCampoObrigatorioInteressado(){
+        return pageObjects.getAlertaProblemaMovimentacoes().getText();
     }
 
-    public void validarMensagemCampoObrigatorioValor(){
-        Assert.assertEquals("Valor é obrigatório\n" + "Valor deve ser um número",
-                pageObjects.getAlertaProblemaMovimentacoes().getText());
+    public String  validarMensagemCampoObrigatorioValor(){
+        return pageObjects.getAlertaProblemaMovimentacoes().getText();
     }
 
 

@@ -3,20 +3,18 @@ package br.com.projetoSeuBarriga.seuBarrigaTests;
 import br.com.projetoSeuBarriga.pageBase.LoginPage;
 import br.com.projetoSeuBarriga.pageBase.MovimentacoesPage;
 import br.com.projetoSeuBarriga.utils.WebDriverUtil;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 
 
 public class MovimentacoesTests {
 
-    public static WebDriver driver = WebDriverUtil.openBrowser();
+    WebDriver driver = WebDriverUtil.openBrowser();
     MovimentacoesPage movPage = new MovimentacoesPage(driver);
     LoginPage loginPage = new LoginPage(driver);
 
     @Before
-    public void login(){
+    public void iniciar(){
         this.loginPage.fazerLogin();
     }
 
@@ -35,7 +33,8 @@ public class MovimentacoesTests {
         this.movPage.setInteressado();
         this.movPage.setValor("500");
         this.movPage.salvarMovimentacao();
-        this.movPage.validarMensagemDeMovimentacaoComSucesso();
+
+        Assert.assertEquals("Movimentação adicionada com sucesso!", this.movPage.validarMensagemDeMovimentacaoComSucesso());
     }
 
     @Test
@@ -48,7 +47,8 @@ public class MovimentacoesTests {
         this.movPage.setInteressado();
         this.movPage.setValor("abcdefgh");
         this.movPage.salvarMovimentacao();
-        this.movPage.validarMensagemCampoValorCaracterInvalido();
+
+        Assert.assertEquals("Valor deve ser um número", this.movPage.validarMensagemCampoValorCaracterInvalido());
     }
 
     @Test
@@ -60,7 +60,8 @@ public class MovimentacoesTests {
         this.movPage.setInteressado();
         this.movPage.setValor("500");
         this.movPage.salvarMovimentacao();
-        this.movPage.validarMensagemCampoObrigatorioDataDaMovimentacao();
+
+        Assert.assertEquals("Data da Movimentação é obrigatório", this.movPage.validarMensagemCampoObrigatorioDataDaMovimentacao());
     }
 
     @Test
@@ -72,7 +73,8 @@ public class MovimentacoesTests {
         this.movPage.setInteressado();
         this.movPage.setValor("500");
         this.movPage.salvarMovimentacao();
-        this.movPage.validarMensagemCampoObrigatorioDataDoPagamento();
+
+        Assert.assertEquals("Data do pagamento é obrigatório", this.movPage.validarMensagemCampoObrigatorioDataDoPagamento());
     }
 
     @Test
@@ -84,7 +86,8 @@ public class MovimentacoesTests {
         this.movPage.setInteressado();
         this.movPage.setValor("500");
         this.movPage.salvarMovimentacao();
-        this.movPage.validarMensagemCampoObrigatorioDescricao();
+
+        Assert.assertEquals("Descrição é obrigatório", this.movPage.validarMensagemCampoObrigatorioDescricao());
     }
 
     @Test
@@ -96,7 +99,8 @@ public class MovimentacoesTests {
         this.movPage.setDescricao();
         this.movPage.setValor("500");
         this.movPage.salvarMovimentacao();
-        this.movPage.validarMensagemCampoObrigatorioInteressado();
+
+        Assert.assertEquals("Interessado é obrigatório", this.movPage.validarMensagemCampoObrigatorioInteressado());
     }
 
     @Test
@@ -108,6 +112,7 @@ public class MovimentacoesTests {
         this.movPage.setDescricao();
         this.movPage.setInteressado();
         this.movPage.salvarMovimentacao();
-        this.movPage.validarMensagemCampoObrigatorioValor();
+
+        Assert.assertEquals("Valor é obrigatório\n" + "Valor deve ser um número", this.movPage.validarMensagemCampoObrigatorioValor());
     }
 }
