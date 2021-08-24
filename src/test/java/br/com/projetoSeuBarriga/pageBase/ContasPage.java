@@ -79,6 +79,4 @@ public class ContasPage extends BasePage {
         return pageObjects.getAlertaSucesso().getText();
     }
 
-
-
 }
