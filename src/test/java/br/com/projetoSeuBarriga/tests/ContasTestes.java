@@ -1,4 +1,4 @@
-package br.com.projetoSeuBarriga.seuBarrigaTests;
+package br.com.projetoSeuBarriga.tests;
 
 import br.com.projetoSeuBarriga.pageBase.LoginPage;
 import org.junit.*;
@@ -7,7 +7,7 @@ import br.com.projetoSeuBarriga.pageBase.ContasPage;
 import br.com.projetoSeuBarriga.utils.WebDriverUtil;
 
 
-public class ContasTests {
+public class ContasTestes {
 
     WebDriver driver = WebDriverUtil.openBrowser();
     ContasPage contasPage = new ContasPage(driver);

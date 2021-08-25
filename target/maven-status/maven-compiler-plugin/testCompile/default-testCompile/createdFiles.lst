@@ -1,11 +1,11 @@
 br\com\projetoSeuBarriga\pageBase\LoginPage.class
 br\com\projetoSeuBarriga\utils\WebDriverUtil.class
 br\com\projetoSeuBarriga\pageObjects\MovimentacoesObjects.class
-br\com\projetoSeuBarriga\seuBarrigaTests\ContasTests.class
+br\com\projetoSeuBarriga\tests\ContasTestes.class
 br\com\projetoSeuBarriga\pageBase\MovimentacoesPage.class
 br\com\projetoSeuBarriga\pageBase\ContasPage.class
 br\com\projetoSeuBarriga\pageObjects\ContasObjects.class
-br\com\projetoSeuBarriga\seuBarrigaTests\MovimentacoesTests.class
 br\com\projetoSeuBarriga\data\GeradorDeValoresRandomicos.class
+br\com\projetoSeuBarriga\tests\MovimentacoesTestes.class
 br\com\projetoSeuBarriga\pageObjects\LoginObjects.class
 br\com\projetoSeuBarriga\utils\BasePage.class

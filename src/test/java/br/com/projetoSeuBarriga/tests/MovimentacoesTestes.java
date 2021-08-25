@@ -1,4 +1,4 @@
-package br.com.projetoSeuBarriga.seuBarrigaTests;
+package br.com.projetoSeuBarriga.tests;
 
 import br.com.projetoSeuBarriga.pageBase.LoginPage;
 import br.com.projetoSeuBarriga.pageBase.MovimentacoesPage;
@@ -7,7 +7,7 @@ import org.junit.*;
 import org.openqa.selenium.WebDriver;
 
 
-public class MovimentacoesTests {
+public class MovimentacoesTestes {
 
     WebDriver driver = WebDriverUtil.openBrowser();
     MovimentacoesPage movPage = new MovimentacoesPage(driver);
